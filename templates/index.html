@@ -1,10 +1,67 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Glitch test</title>
-	</head>
-	<body>
-		<h1>Hello, world!</h1>
-		<h2>Current time is {{ now }} </h2>
-	</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>The Danish Court Meeting Database</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Source+Serif+Pro&display=swap" rel="stylesheet">
+
+
+    <style> 
+      
+      .container {
+        max-width: 800px !important;
+      }
+
+      .content-title {
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      .navbar-item {
+        font-family: Lato;
+        font-size: 20px;
+      }
+
+      .a {
+        color: #000000;
+      }
+    </style>  
+
+
+  </head>
+  <body>
+      <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">The Danish Court Meetings Database</a>
+        </div>
+      </nav>
+      <section class="hero is-medium is-light">
+        <div class="hero-body">
+          <p class="title">The Danish court meeting database</p>
+          <div class="subtitle">
+            <p>This is the first database of all published court meeting in the Danish city courts. The database is updated with new court meetings every week. Currently there are {{ "{:,}".format(count) }} court meetings in the database.</p>
+            <p>You can download the full dataset <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/laurabejder/danish-court-cases/blob/2b1fb135973f321e80b92e174b2eef6ce516618b/data/data_en.csv" download target="_blank"><u>here</u></a>.</p>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="content-title">Courts</div>
+            {% for court in courts %}
+            <p><a href="/court/{{ court }}">{{ court.title() }}</a></p>
+            {% endfor %}
+        </div>
+      </section>
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              © 2023 – Laura Bejder Jensen
+            </p>
+          </div>
+        </footer>
+  </body>
 </html>
