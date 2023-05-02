@@ -5,14 +5,14 @@ from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///court-database.sqlite3'
 db = SQLAlchemy(app)
 
 with app.app_context():
     db.Model.metadata.reflect(db.engine)
 
 class Cases_en(db.Model):
-    __tablename__ = 'en_data'
+    __tablename__ = 'data_en'
     __table_args__ = {'extend_existing': True }
     court_file_number = db.Column(db.Text, primary_key=True)   
 
