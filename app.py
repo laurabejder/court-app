@@ -33,7 +33,7 @@ def detail(slug):
 
 
 
-@app.route('/court/<url-slug>')
+@app.route('/court/<court_name>')
 def court(court_name):
     court_meetings = Cases_en.query.filter_by(court_en=court_name).all()
     return render_template("court.html", courts=court_name, count=len(court_meetings), location=court_name, meetings=court_meetings)

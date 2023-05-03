@@ -26,9 +26,26 @@
         font-size: 20px;
       }
 
-      .a {
+      a {
         color: #000000;
       }
+
+      p {
+        font-size: 18px;
+        margin-top:0.8m; 
+        margin-bottom:0.8em;
+      }
+
+      a:hover {
+        color: #00A36C;
+      }
+
+      .page-title {
+        color: #00A36C;
+        font-size: 42px;
+        font-weight: 600;
+      }
+
     </style>  
 
 
@@ -41,9 +58,11 @@
       </nav>
       <section class="hero is-medium is-light">
         <div class="hero-body">
-          <p class="title">The Danish court meeting database</p>
+          <div class="page-title">Looking for information on a court meeting?</div>
           <div class="subtitle">
-            <p>This is the first database of all published court meeting in the Danish city courts. The database is updated with new court meetings every week. Currently there are {{ "{:,}".format(count) }} court meetings in the database.</p>
+            <p>You have come to the right place!</p>
+            <p>In Denmark, all the court meetings held in the regional courts are published online as 'retslister' (court lists) every other week or so. But when that period is over, they disappear digitally and can only be obtained by making request to the court to get a physical copy.</p>
+            <p>This is the first database of all published court meeting in the Danish city courts. The data goes back to medio-April 2023. The database is updated with new court meetings every week. Currently there are {{ "{:,}".format(count) }} court meetings in the database.</p>
             <p>You can download the full dataset <a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/laurabejder/danish-court-cases/blob/2b1fb135973f321e80b92e174b2eef6ce516618b/data/data_en.csv" download target="_blank"><u>here</u></a>.</p>
           </div>
         </div>
